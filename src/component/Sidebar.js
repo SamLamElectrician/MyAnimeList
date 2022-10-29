@@ -6,7 +6,12 @@ function Sidebar({ topAnime }) {
 			<nav>
 				<h2>Top Anime</h2>
 				{topAnime.map((anime) => (
-					<a href={anime.url} target='__blank' key={anime.mal_id}>
+					<a
+						href={anime.url}
+						target='_blank'
+						rel='noreferrer'
+						key={anime.mal_id}
+					>
 						{anime.title}
 					</a>
 				))}

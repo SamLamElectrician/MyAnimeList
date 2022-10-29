@@ -9,6 +9,9 @@ const Header = () => {
 				<li>Home</li>
 				<li>About</li>
 				<li>My List</li>
+				<li>
+					<button>Sign In</button>
+				</li>
 			</ul>
 		</nav>
 	);
