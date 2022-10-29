@@ -8,6 +8,7 @@ const Header = () => {
 			<ul className='rightNav'>
 				<li>Home</li>
 				<li>About</li>
+				<li>My List</li>
 			</ul>
 		</nav>
 	);

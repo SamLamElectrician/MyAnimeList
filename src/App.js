@@ -16,13 +16,17 @@ function App() {
 
 	//async/await function to display to top 5 animes by popularity
 	const GetTopAnime = async () => {
-		const response = await fetch(
-			'https://api.jikan.moe/v4/top/anime?filter=bypopularity&page=1'
-		);
-		//returns json data
-		const topAnime = await response.json();
-		//slices the data so it only shows the top 5
-		setTopAnime(topAnime.data.slice(0, 5));
+		try {
+			const response = await fetch(
+				'https://api.jikan.moe/v4/top/anime?filter=bypopularit&page=1'
+			);
+			//returns json data
+			const topAnime = await response.json();
+			//slices the data so it only shows the top 5
+			setTopAnime(topAnime.data.slice(0, 5));
+		} catch (error) {
+			alert(error);
+		}
 	};
 	//use effect to activate topanime only once
 	useEffect(() => {
@@ -34,30 +38,43 @@ function App() {
 		//prevents default of form
 		e.preventDefault();
 		//searches anime title
-		SearchAnime(search);
+		if (search) {
+			SearchAnime(search);
+		} else {
+			alert('Please enter an anime to search');
+		}
 	};
 
-	//add error handling
 	const SearchAnime = async (query) => {
-		const response = await fetch(
-			`https://api.jikan.moe/v4/anime?q=${query}&limit=20&order_by=title&sort=acs`
-		);
-		const animeQuery = await response.json();
-		setAnimeList(animeQuery.data);
+		//error handling for api call
+		try {
+			//api call for a query
+			const response = await fetch(
+				`https://api.jikan.moe/v4/anime?q=${query}&limit=20&order_by=title&sort=acs`
+			);
+			const animeQuery = await response.json();
+			setAnimeList(animeQuery.data);
+		} catch (error) {
+			alert(error);
+		}
 	};
 
 	const SearchRandom = async () => {
-		do {
+		//sets an empty array to append to
+		const animeArray = [];
+		//since api only returns
+		while (animeArray.length < 21) {
 			const response = await fetch('https://api.jikan.moe/v4/random/anime');
 			const animeQuery = await response.json();
-			// setRandom(animeQuery);
-			setRandom({ ...random, animeQuery });
-			console.log(random);
-		} while (random.length < 5);
+			animeArray.push(animeQuery.data);
+		}
+		setRandom(animeArray);
 	};
 	useEffect(() => {
 		SearchRandom();
 	}, []);
+
+	console.log(random);
 
 	return (
 		<>
@@ -69,6 +86,7 @@ function App() {
 					search={search}
 					setSearch={setSearch}
 					animeList={animeList}
+					random={random}
 				/>
 			</div>
 		</>

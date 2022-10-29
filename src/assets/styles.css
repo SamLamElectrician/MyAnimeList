@@ -335,6 +335,7 @@ img {
 }
 .content .animeList {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   margin-top: 32px;
   margin: 32px -8px 0px;
@@ -343,6 +344,7 @@ img {
   flex: 1 1 33.333%;
   max-width: 25%;
   padding: 16px 8px;
+  margin: 0 2%;
 }
 .content .animeList .animeCard a {
   text-decoration: none;
@@ -377,5 +379,5 @@ img {
   transform: scale(1.05);
 }
 .content .animeList .animeCard button {
-  text-align: center;
+  margin: 10% 37% 0% 37%;
 }/*# sourceMappingURL=styles.css.map */

@@ -9,12 +9,12 @@ const AnimeCard = ({ anime }) => {
 				</figure>
 				<div className='info'>
 					<h3>
-						{anime.title} || {anime.title_japanese}
+						{anime.title} ||<br></br> {anime.title_japanese}
 					</h3>
 					<p>{anime.synopsis}</p>
 				</div>
 			</a>
-			<button>Add To List</button>
+			<button buttonId={anime.mal_id}>Add To List</button>
 		</article>
 	);
 };

@@ -10,17 +10,35 @@ const Main = (props) => {
 					<input
 						type='search'
 						placeholder='Search Anime and Mangas'
-						required
 						value={props.search}
 						onChange={(e) => props.setSearch(e.target.value)}
 					/>
 				</form>
 			</div>
-			<div className='animeList'>
+			{props.search ? (
+				<div>
+					<h3>Search Results</h3>
+					<div className='animeList'>
+						{props.animeList.map((anime) => (
+							<AnimeCard anime={anime} key={anime.mal_id} />
+						))}
+					</div>
+				</div>
+			) : (
+				<div>
+					<h3>Animes You Should Check Out</h3>
+					<div className='animeList'>
+						{props.random.map((anime) => (
+							<AnimeCard anime={anime} key={anime.mal_id} />
+						))}
+					</div>
+				</div>
+			)}
+			{/* <div className='animeList'>
 				{props.animeList.map((anime) => (
 					<AnimeCard anime={anime} key={anime.mal_id} />
 				))}
-			</div>
+			</div> */}
 		</main>
 	);
 };

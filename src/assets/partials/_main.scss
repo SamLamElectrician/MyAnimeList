@@ -52,6 +52,7 @@
 	}
 	.animeList {
 		display: flex;
+		justify-content: center;
 		flex-wrap: wrap;
 		margin-top: 32px;
 		margin: 32px -8px 0px;
@@ -59,6 +60,7 @@
 			flex: 1 1 33.333%;
 			max-width: 25%;
 			padding: 16px 8px;
+			margin: 0 2%;
 			a {
 				text-decoration: none;
 				color: #313131;
@@ -95,7 +97,7 @@
 				}
 			}
 			button {
-				text-align: center;
+				margin: 10% 37% 0% 37%;
 			}
 		}
 	}
