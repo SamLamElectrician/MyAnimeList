@@ -6,12 +6,15 @@ const Header = () => {
 		<nav className='headerNav'>
 			<h1 className='leftHeader'>Sam's Anime List</h1>
 			<ul className='rightNav'>
-				<li>Home</li>
-				<li>About</li>
-				<li>My List</li>
 				<li>
-					<button>Sign In</button>
+					<Link to='/home'>Home</Link>
 				</li>
+				<li>
+					<Link to='/'>About</Link>
+				</li>
+				{/* <li>
+					<button>Sign In</button>
+				</li> */}
 			</ul>
 		</nav>
 	);

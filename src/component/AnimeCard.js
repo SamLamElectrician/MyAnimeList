@@ -5,7 +5,7 @@ const AnimeCard = ({ anime }) => {
 		<article className='animeCard'>
 			<a href={anime.url} target='_blank' rel='noreferrer'>
 				<figure>
-					<img src={anime.images.jpg.large_image_url} alt='anime image' />
+					<img src={anime.images.jpg.large_image_url} alt='anime' />
 				</figure>
 				<div className='info'>
 					<h3>
@@ -14,7 +14,11 @@ const AnimeCard = ({ anime }) => {
 					<p>{anime.synopsis}</p>
 				</div>
 			</a>
-			<button buttonId={anime.mal_id}>Add To List</button>
+
+			<button buttonId={anime.mal_id}>
+				{/* <button buttonId={anime.mal_id} onClick={AddToList}> */}
+				Add To List
+			</button>
 		</article>
 	);
 };
