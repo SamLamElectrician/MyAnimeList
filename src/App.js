@@ -1,23 +1,42 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 //components
-import Header from './component/Header';
 import Main from './component/Main';
 import About from './component/About';
+import Login from './component/Login';
+import Signup from './component/Signup';
+import { UserAuthContextProvider } from './context/UserAuthContext';
+import ProtectedRoute from './component/ProtectedRoute';
 
 function App() {
 	return (
 		<>
-			{/* <Header /> */}
+			<UserAuthContextProvider>
+				<Routes>
+					<Route exact path='/' element={<Login />} />
+					<Route path='/sign+up' element={<Signup />} />
 
-			<Header />
-			<Routes>
-				{/* <Route exact path='/' element={<Login />} /> */}
-				{/* <Route path='/signup' element={<Signup />} /> */}
+					{/* <Route
+						exact
+						path='/about'
+						element={
+							<ProtectedRoute>
+								<About />
+							</ProtectedRoute>
+						}
+					></Route> */}
 
-				<Route exact path='/' element={<About />}></Route>
-				<Route path='/home' element={<Main />}></Route>
-			</Routes>
+					<Route
+						exact
+						path='/home'
+						element={
+							<ProtectedRoute>
+								<Main />
+							</ProtectedRoute>
+						}
+					></Route>
+				</Routes>
+			</UserAuthContextProvider>
 		</>
 	);
 }

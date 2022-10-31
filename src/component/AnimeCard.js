@@ -15,7 +15,7 @@ const AnimeCard = ({ anime }) => {
 				</div>
 			</a>
 
-			<button buttonId={anime.mal_id}>
+			<button buttonKey={anime.mal_id}>
 				{/* <button buttonId={anime.mal_id} onClick={AddToList}> */}
 				Add To List
 			</button>
