@@ -1,0 +1,56 @@
+.bodyLogin {
+	background-color: #fafafa;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	width: 100%;
+	align-items: center;
+	gap: 2%;
+	flex-direction: column;
+	height: 100vh;
+	h2 {
+		text-align: center;
+	}
+	.p-4 {
+		padding: 1.5rem !important;
+		width: 20vw;
+	}
+	.box {
+		border: 1px solid #dfdfdf;
+		background-color: #fff;
+	}
+	.g-btn {
+		width: 100% !important;
+		height: 40px !important;
+		line-height: 40px !important;
+		font-size: 15px !important;
+	}
+	.g-btn > div,
+	.g-btn > div > svg {
+		width: 40px !important;
+		height: 38px !important;
+	}
+	.loginButton {
+		text-align: center;
+		margin: 2%;
+		width: 100%;
+		button {
+			color: #fff;
+			background-color: #2e51a2;
+			border: none;
+			width: 20.5rem;
+			padding: 0.375rem 0.75rem;
+			height: 35px;
+		}
+	}
+	input {
+		width: 100%;
+		padding: 0.375rem 0.75rem;
+		text-align: center;
+		margin: 2% auto;
+	}
+	a {
+		color: #0d6efd;
+		text-decoration: underline;
+	}
+}

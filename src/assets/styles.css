@@ -11,8 +11,7 @@
   display: flex;
   gap: 30px;
 }
-.headerNav ul li {
-  list-style: none;
+.headerNav ul a {
   color: #fff;
 }
 
@@ -284,13 +283,43 @@ img {
   max-height: 100%;
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.g-btn {
+  width: 100% !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  font-size: 15px !important;
+}
+
+.g-btn > div,
+.g-btn > div > svg {
+  width: 40px !important;
+  height: 38px !important;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.box {
+  border: 1px solid #dfdfdf;
+  background-color: #fff;
+}
+
 .content {
   display: flex;
 }
 .content aside {
   margin: 3% 0% 0% 3%;
   width: 60vw;
-  max-width: 20vw;
+  max-width: 100;
 }
 .content aside nav {
   display: flex;
@@ -333,12 +362,15 @@ img {
   outline: none !important;
   border: 3px solid #2e51a2;
 }
+.content h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 2%;
+}
 .content .animeList {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 32px;
-  margin: 32px -8px 0px;
 }
 .content .animeList .animeCard {
   flex: 1 1 33.333%;
@@ -380,4 +412,150 @@ img {
 }
 .content .animeList .animeCard button {
   margin: 10% 37% 0% 37%;
+}
+
+.popUp {
+  display: block;
+}
+.popUp .popUpInner {
+  background-color: #a2d2ff;
+  line-height: 1.2rem;
+  min-width: 450px;
+  height: 30%;
+  padding: 30px 40px;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  z-index: 10;
+  overflow: auto;
+  box-shadow: 0px 25px 43px 0px rgba(0, 0, 0, 0.32);
+  max-width: 100%;
+}
+.popUp h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2%;
+}
+.popUp p {
+  text-align: center;
+}
+.popUp button {
+  display: block;
+  margin: 2% auto;
+}
+
+.bodyLogin {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  align-items: center;
+  gap: 2%;
+  flex-direction: column;
+  height: 100vh;
+}
+.bodyLogin h2 {
+  text-align: center;
+}
+.bodyLogin .p-4 {
+  padding: 1.5rem !important;
+  width: 20vw;
+}
+.bodyLogin .box {
+  border: 1px solid #dfdfdf;
+  background-color: #fff;
+}
+.bodyLogin .g-btn {
+  width: 100% !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  font-size: 15px !important;
+}
+.bodyLogin .g-btn > div,
+.bodyLogin .g-btn > div > svg {
+  width: 40px !important;
+  height: 38px !important;
+}
+.bodyLogin .loginButton {
+  text-align: center;
+  margin: 2%;
+  width: 100%;
+}
+.bodyLogin .loginButton button {
+  color: #fff;
+  background-color: #2e51a2;
+  border: none;
+  width: 20.5rem;
+  padding: 0.375rem 0.75rem;
+  height: 35px;
+}
+.bodyLogin input {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  margin: 2% auto;
+}
+.bodyLogin a {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+.bodySignUp {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  align-items: center;
+  gap: 2%;
+  flex-direction: column;
+  height: 100vh;
+}
+.bodySignUp h2 {
+  text-align: center;
+}
+.bodySignUp .p-4 {
+  padding: 1.5rem !important;
+  width: 20vw;
+}
+.bodySignUp .box {
+  border: 1px solid #dfdfdf;
+  background-color: #fff;
+}
+.bodySignUp .g-btn {
+  width: 100% !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  font-size: 15px !important;
+}
+.bodySignUp .g-btn > div,
+.bodySignUp .g-btn > div > svg {
+  width: 40px !important;
+  height: 38px !important;
+}
+.bodySignUp .signUpButton {
+  text-align: center;
+  margin: 2%;
+  width: 100%;
+}
+.bodySignUp .signUpButton button {
+  color: #fff;
+  background-color: #2e51a2;
+  border: none;
+  width: 20.5rem;
+  padding: 0.375rem 0.75rem;
+  height: 35px;
+}
+.bodySignUp input {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  margin: 2% auto;
+}
+.bodySignUp a {
+  color: #0d6efd;
+  text-decoration: underline;
 }/*# sourceMappingURL=styles.css.map */
