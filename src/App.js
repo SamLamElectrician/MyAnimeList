@@ -14,9 +14,9 @@ function App() {
 			<UserAuthContextProvider>
 				<Routes>
 					<Route exact path='/' element={<Login />} />
-					<Route path='/sign+up' element={<Signup />} />
+					<Route path='/signup' element={<Signup />} />
 
-					{/* <Route
+					<Route
 						exact
 						path='/about'
 						element={
@@ -24,7 +24,7 @@ function App() {
 								<About />
 							</ProtectedRoute>
 						}
-					></Route> */}
+					></Route>
 
 					<Route
 						exact
@@ -35,6 +35,8 @@ function App() {
 							</ProtectedRoute>
 						}
 					></Route>
+					<Route path='/home2' element={<Main />}></Route>
+					<Route path='/about2' element={<About />}></Route>
 				</Routes>
 			</UserAuthContextProvider>
 		</>

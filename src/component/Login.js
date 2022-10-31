@@ -9,7 +9,7 @@ const Login = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
-	const { logIn, googleSignIn, logInAnon } = useUserAuth();
+	const { logIn, googleSignIn } = useUserAuth();
 	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
@@ -33,18 +33,6 @@ const Login = () => {
 		}
 	};
 	// Log in as Anonymous
-	const handleAnonLogin = async (e) => {
-		e.preventDefault();
-
-		// try catch login as anonymous
-		try {
-			await logInAnon();
-			// redirect user to the login page
-			navigate('/home');
-		} catch (err) {
-			setError(err.message);
-		}
-	};
 
 	return (
 		<>
@@ -85,13 +73,8 @@ const Login = () => {
 						Don't have an account? <Link to='/signup'>Sign up</Link>
 					</p>
 					<p>
-						{' '}
-						Or Use anonymously{' '}
-						<button type='submit' onClick={(e) => handleAnonLogin(e)}></button>
+						Don't have an account? <Link to='/home2'>Home</Link>
 					</p>
-					{/* <p> */}
-					{/* Back to the Homepage <Link to='/home'></Link> */}
-					{/* </p> */}
 				</div>
 			</div>
 		</>
