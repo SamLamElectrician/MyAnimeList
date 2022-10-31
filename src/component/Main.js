@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AnimeCard from './AnimeCard';
+import Header from './Header';
 
 const Main = () => {
 	// sets anime list
@@ -70,6 +71,7 @@ const Main = () => {
 
 	return (
 		<>
+			<Header></Header>
 			<div className='content'>
 				<aside>
 					<nav>
