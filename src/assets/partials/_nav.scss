@@ -26,6 +26,10 @@
 			a {
 				text-decoration: none;
 				color: #fff;
+				&:hover {
+					background: #313131;
+					padding: 0.2rem;
+				}
 			}
 		}
 	}
