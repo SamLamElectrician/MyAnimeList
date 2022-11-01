@@ -1,0 +1,24 @@
+//  #1c439b
+
+.headerNav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #2e51a2;
+	color: #fff;
+	.leftHeader {
+		margin-left: 3%;
+	}
+	.rightNav {
+		margin: 0% 3% 0% 0%;
+		display: flex;
+		gap: 20px;
+		li {
+			list-style-type: none;
+			a {
+				text-decoration: none;
+				color: #fff;
+			}
+		}
+	}
+}

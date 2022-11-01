@@ -24,7 +24,7 @@ const Signup = () => {
 
 	return (
 		<>
-			<div className='bodySignUp'>
+			<div className='body'>
 				<div className='p-4 box'>
 					<h2 className='mb-3'>Sam's Anime List Sign Up</h2>
 					{error && <Alert>{error}</Alert>}

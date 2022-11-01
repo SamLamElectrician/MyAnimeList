@@ -1,18 +1,75 @@
 .headerNav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: #2e51a2;
-}
-.headerNav h1 {
   color: #fff;
 }
-.headerNav ul {
+.headerNav .leftHeader {
+  margin-left: 3%;
+}
+.headerNav .rightNav {
+  margin: 0% 3% 0% 0%;
   display: flex;
-  gap: 30px;
+  gap: 20px;
 }
-.headerNav ul a {
+.headerNav .rightNav li {
+  list-style-type: none;
+}
+.headerNav .rightNav li a {
+  text-decoration: none;
   color: #fff;
+}
+
+.body {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  align-items: center;
+  height: 100vh;
+}
+.body .p-4 {
+  min-width: 340px;
+}
+.body .p-4 p {
+  margin: auto auto;
+}
+.body .p-4 .gap-2 {
+  text-align: center;
+}
+.body .p-4 .gap-2 button {
+  width: 100%;
+}
+.body .p-4 h2 {
+  text-align: center;
+}
+.body .p-4 .signUpButton {
+  text-align: center;
+}
+.body .p-4 .signUpButton button {
+  width: 100%;
+}
+
+.box {
+  border: 1px solid #dfdfdf;
+  background-color: #fff;
+  width: 20%;
+}
+
+.g-btn {
+  width: 100% !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  font-size: 15px !important;
+}
+
+.g-btn > div,
+.g-btn > div > svg {
+  width: 40px !important;
+  height: 38px !important;
 }
 
 html {
@@ -272,65 +329,39 @@ html {
   overflow: hidden;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-li {
-  list-style: none;
-}
-
 a {
   text-decoration: none;
 }
 
-.g-btn {
-  width: 100% !important;
-  height: 40px !important;
-  line-height: 40px !important;
-  font-size: 15px !important;
+button {
+  padding: 0.8%;
+  border: none;
+  color: #fff;
+  background-color: #2e51a2;
 }
-
-.g-btn > div,
-.g-btn > div > svg {
-  width: 40px !important;
-  height: 38px !important;
-}
-
-body {
-  background-color: #fafafa;
-}
-
-.box {
-  border: 1px solid #dfdfdf;
-  background-color: #fff;
+button:hover {
+  color: #aaa;
+  background-color: #313131;
+  transform: scale(1.05);
 }
 
 .content {
   display: flex;
 }
 .content aside {
-  margin: 3% 0% 0% 3%;
+  margin: 3% 1% 0% 1%;
   width: 60vw;
-  max-width: 100;
+  max-width: 450px;
 }
 .content aside nav {
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-.content aside nav h2 {
-  color: #313131;
-  font-size: 24px;
-  margin-bottom: 16px;
-  text-align: center;
+  flex: 1 1 33.333% h2;
+  flex-color: #313131;
+  flex-font-size: 24px;
+  flex-margin-bottom: 16px;
+  flex-text-align: center;
 }
 .content aside nav a {
   display: block;
@@ -348,45 +379,55 @@ body {
   background-color: #313131;
   color: #aaa;
 }
-.content .searchContainer {
-  text-align: center;
+.content main .searchContainer {
+  display: flex;
+  justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  z-index: 500;
   margin-top: 2%;
 }
-.content .searchContainer input {
+.content main .searchContainer form {
+  display: flex;
+  justify-content: center;
+}
+.content main .searchContainer input {
   text-align: center;
   width: 25vw;
   border: 1px solid #313131;
   padding: 0.7rem;
 }
-.content .searchContainer input:focus {
+.content main .searchContainer input:focus {
   outline: none !important;
   border: 3px solid #2e51a2;
 }
-.content h3 {
+.content main h3 {
   text-align: center;
   font-size: 1.4rem;
   margin-top: 2%;
 }
-.content .animeList {
+.content main .animeList {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-.content .animeList .animeCard {
+.content main .animeList .animeCard {
   flex: 1 1 33.333%;
   max-width: 25%;
+  min-width: 300px;
   padding: 16px 8px;
   margin: 0 2%;
 }
-.content .animeList .animeCard a {
+.content main .animeList .animeCard a {
   text-decoration: none;
   color: #313131;
 }
-.content .animeList .animeCard figure {
+.content main .animeList .animeCard figure {
   display: block;
   margin-bottom: 16px;
 }
-.content .animeList .animeCard figure img {
+.content main .animeList .animeCard figure img {
   display: block;
   width: 100%;
   height: 350px;
@@ -396,21 +437,22 @@ body {
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.17);
   transition: 0.3s;
 }
-.content .animeList .animeCard .info {
-  width: 350px;
+.content main .animeList .animeCard .info {
+  max-width: 350px;
+  width: 100%;
   text-align: center;
   margin: 0 auto;
   height: 20vh;
   overflow-y: auto;
 }
-.content .animeList .animeCard h3 {
+.content main .animeList .animeCard h3 {
   color: #313131;
 }
-.content .animeList .animeCard:hover figure img {
+.content main .animeList .animeCard:hover figure img {
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
   transform: scale(1.05);
 }
-.content .animeList .animeCard button {
+.content main .animeList .animeCard button {
   margin: 10% 37% 0% 37%;
 }
 
@@ -420,7 +462,7 @@ body {
 .popUp .popUpInner {
   background-color: #a2d2ff;
   line-height: 1.2rem;
-  min-width: 450px;
+  min-width: 350pxx;
   height: 30%;
   padding: 30px 40px;
   position: fixed;
@@ -446,116 +488,115 @@ body {
   margin: 2% auto;
 }
 
-.bodyLogin {
-  background-color: #fafafa;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  width: 100%;
-  align-items: center;
-  gap: 2%;
-  flex-direction: column;
-  height: 100vh;
+@media (max-width: 480px) {
+  .content {
+    display: block;
+  }
+  .content aside {
+    width: 100%;
+  }
+  .content aside nav a {
+    margin: 0 3% 2px 3%;
+  }
+  .content main .searchContainer {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+  }
+  .content main .searchContainer input {
+    width: 90vw;
+  }
+  .content main .animeList .animeCard {
+    margin-bottom: 6%;
+  }
+  .content main .animeList .animeCard button {
+    width: 24vw;
+  }
+  .popUp .popUpInner {
+    height: auto;
+  }
 }
-.bodyLogin h2 {
-  text-align: center;
+@media (max-width: 768px) {
+  .content {
+    display: block;
+  }
+  .content aside {
+    min-width: 100%;
+  }
+  .content aside nav a {
+    margin: 0 2%;
+  }
+  .content main .searchContainer {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+  }
+  .content main .searchContainer input {
+    width: 90vw;
+  }
+  .content main .animeList .animeCard {
+    margin-bottom: 6%;
+  }
+  .content main .animeList .animeCard button {
+    width: 24vw;
+  }
+  .popUp .popUpInner {
+    height: auto;
+  }
 }
-.bodyLogin .p-4 {
-  padding: 1.5rem !important;
-  width: 20vw;
+@media (max-width: 1024px) {
+  .content {
+    display: block;
+  }
+  .content h2 {
+    text-align: center;
+  }
+  .content aside {
+    min-width: 100%;
+  }
+  .content aside nav a {
+    margin: 0 2%;
+  }
+  .content main .searchContainer {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+  }
+  .content main .searchContainer input {
+    width: 90vw;
+  }
+  .content main .animeList .animeCard {
+    margin-bottom: 6%;
+  }
+  .popUp .popUpInner {
+    height: auto;
+  }
 }
-.bodyLogin .box {
-  border: 1px solid #dfdfdf;
-  background-color: #fff;
-}
-.bodyLogin .g-btn {
-  width: 100% !important;
-  height: 40px !important;
-  line-height: 40px !important;
-  font-size: 15px !important;
-}
-.bodyLogin .g-btn > div,
-.bodyLogin .g-btn > div > svg {
-  width: 40px !important;
-  height: 38px !important;
-}
-.bodyLogin .loginButton {
-  text-align: center;
-  margin: 2%;
-  width: 100%;
-}
-.bodyLogin .loginButton button {
-  color: #fff;
-  background-color: #2e51a2;
-  border: none;
-  width: 20.5rem;
-  padding: 0.375rem 0.75rem;
-  height: 35px;
-}
-.bodyLogin input {
-  width: 100%;
-  padding: 0.375rem 0.75rem;
-  text-align: center;
-  margin: 2% auto;
-}
-.bodyLogin a {
-  color: #0d6efd;
-  text-decoration: underline;
-}
-
-.bodySignUp {
-  background-color: #fafafa;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  width: 100%;
-  align-items: center;
-  gap: 2%;
-  flex-direction: column;
-  height: 100vh;
-}
-.bodySignUp h2 {
-  text-align: center;
-}
-.bodySignUp .p-4 {
-  padding: 1.5rem !important;
-  width: 20vw;
-}
-.bodySignUp .box {
-  border: 1px solid #dfdfdf;
-  background-color: #fff;
-}
-.bodySignUp .g-btn {
-  width: 100% !important;
-  height: 40px !important;
-  line-height: 40px !important;
-  font-size: 15px !important;
-}
-.bodySignUp .g-btn > div,
-.bodySignUp .g-btn > div > svg {
-  width: 40px !important;
-  height: 38px !important;
-}
-.bodySignUp .signUpButton {
-  text-align: center;
-  margin: 2%;
-  width: 100%;
-}
-.bodySignUp .signUpButton button {
-  color: #fff;
-  background-color: #2e51a2;
-  border: none;
-  width: 20.5rem;
-  padding: 0.375rem 0.75rem;
-  height: 35px;
-}
-.bodySignUp input {
-  width: 100%;
-  padding: 0.375rem 0.75rem;
-  text-align: center;
-  margin: 2% auto;
-}
-.bodySignUp a {
-  color: #0d6efd;
-  text-decoration: underline;
+@media (max-width: 1150px) {
+  .content {
+    display: block;
+  }
+  .content h2 {
+    text-align: center;
+  }
+  .content aside {
+    min-width: 100%;
+  }
+  .content aside nav a {
+    margin: 0 3%;
+  }
+  .content main .searchContainer {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+  }
+  .content main .searchContainer input {
+    width: 90vw;
+  }
+  .content main .animeList .animeCard {
+    margin-bottom: 6%;
+  }
+  .popUp .popUpInner {
+    height: auto;
+  }
 }/*# sourceMappingURL=styles.css.map */
