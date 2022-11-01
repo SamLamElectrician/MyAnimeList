@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../assets/images/Logo.png';
 
 const Header = () => {
 	return (
 		<nav className='headerNav'>
-			<h1 className='leftHeader'>Sam's Anime List</h1>
+			<div className='leftHeader'>
+				<img src={Logo} alt="Sam's Anime List Logo" />
+			</div>
 			<ul className='rightNav'>
 				<li>
 					<Link to='/home'>Home</Link>

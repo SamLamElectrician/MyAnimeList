@@ -6,13 +6,21 @@
 	align-items: center;
 	background-color: #2e51a2;
 	color: #fff;
+	padding: 1%;
+
 	.leftHeader {
 		margin-left: 3%;
+		width: 350px;
+
+		img {
+			width: 100%;
+		}
 	}
 	.rightNav {
 		margin: 0% 3% 0% 0%;
 		display: flex;
 		gap: 20px;
+		font-size: 1.4rem;
 		li {
 			list-style-type: none;
 			a {

@@ -4,14 +4,20 @@
   align-items: center;
   background-color: #2e51a2;
   color: #fff;
+  padding: 1%;
 }
 .headerNav .leftHeader {
   margin-left: 3%;
+  width: 350px;
+}
+.headerNav .leftHeader img {
+  width: 100%;
 }
 .headerNav .rightNav {
   margin: 0% 3% 0% 0%;
   display: flex;
   gap: 20px;
+  font-size: 1.4rem;
 }
 .headerNav .rightNav li {
   list-style-type: none;
@@ -357,11 +363,13 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  flex: 1 1 33.333% h2;
-  flex-color: #313131;
-  flex-font-size: 24px;
-  flex-margin-bottom: 16px;
-  flex-text-align: center;
+  flex: 1 1 33.333%;
+}
+.content aside nav h2 {
+  color: #313131;
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: center;
 }
 .content aside nav a {
   display: block;
