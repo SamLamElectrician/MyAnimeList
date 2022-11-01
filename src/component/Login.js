@@ -32,31 +32,32 @@ const Login = () => {
 			console.log(error.message);
 		}
 	};
-	// Log in as Anonymous
 
 	return (
 		<>
-			<div className='bodyLogin'>
+			<div className='body'>
 				<div className='p-4 box'>
 					<h2 className='mb-3'>Sam's Anime List Login</h2>
 					{error && <Alert>{error}</Alert>}
 					<Form onSubmit={handleSubmit}>
-						<Form.Group className='formInput' controlId='formBasicEmail'>
+						<Form.Group className='mb-3' controlId='formBasicEmail'>
 							<Form.Control
 								type='email'
 								placeholder='Email address'
 								onChange={(e) => setEmail(e.target.value)}
 							/>
 						</Form.Group>
-						<Form.Group className='formInput' controlId='formBasicPassword'>
+						<Form.Group className='mb-3' controlId='formBasicPassword'>
 							<Form.Control
 								type='password'
 								placeholder='Password'
 								onChange={(e) => setPassword(e.target.value)}
 							/>
 						</Form.Group>
-						<div className='loginButton'>
-							<Button type='Submit'>Log In</Button>
+						<div className='ld-grid gap-2'>
+							<Button type='Submit' variant='primary'>
+								Log In
+							</Button>
 						</div>
 					</Form>
 					<hr />
@@ -72,8 +73,10 @@ const Login = () => {
 					<p>
 						Don't have an account? <Link to='/signup'>Sign up</Link>
 					</p>
+				</div>
+				<div className='p-4 box mt-3 text-center'>
 					<p>
-						Don't have an account? <Link to='/home2'>Home</Link>
+						Use Anonymously or if you're a Marker <Link to='/home2'>Home</Link>
 					</p>
 				</div>
 			</div>

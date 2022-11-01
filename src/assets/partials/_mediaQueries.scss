@@ -1,0 +1,146 @@
+// 320px — 480px: Mobile devices
+// 481px — 768px: iPads, Tablets
+// 769px — 1024px: Small screens, laptops
+// 1025px — 1200px: Desktops, large screens
+// 1201px and more —  Extra large screens, TV
+
+@media (max-width: 480px) {
+	.content {
+		display: block;
+		aside {
+			width: 100%;
+			nav {
+				a {
+					margin: 0 3% 2px 3%;
+				}
+			}
+		}
+		main {
+			.searchContainer {
+				position: sticky;
+				top: 20px;
+				input {
+					width: 90vw;
+				}
+			}
+			.animeList {
+				.animeCard {
+					margin-bottom: 6%;
+					button {
+						width: 24vw;
+					}
+				}
+			}
+		}
+	}
+	.popUp {
+		.popUpInner {
+			height: auto;
+		}
+	}
+}
+@media (max-width: 768px) {
+	.content {
+		display: block;
+		aside {
+			min-width: 100%;
+			nav {
+				a {
+					margin: 0 2%;
+				}
+			}
+		}
+		main {
+			.searchContainer {
+				position: sticky;
+				top: 20px;
+				input {
+					width: 90vw;
+				}
+			}
+			.animeList {
+				.animeCard {
+					margin-bottom: 6%;
+					button {
+						width: 24vw;
+					}
+				}
+			}
+		}
+	}
+	.popUp {
+		.popUpInner {
+			height: auto;
+		}
+	}
+}
+@media (max-width: 1024px) {
+	.content {
+		display: block;
+		h2 {
+			text-align: center;
+		}
+		aside {
+			min-width: 100%;
+			nav {
+				a {
+					margin: 0 2%;
+				}
+			}
+		}
+		main {
+			.searchContainer {
+				position: sticky;
+				top: 20px;
+				input {
+					width: 90vw;
+				}
+			}
+			.animeList {
+				.animeCard {
+					margin-bottom: 6%;
+				}
+			}
+		}
+	}
+	.popUp {
+		.popUpInner {
+			height: auto;
+		}
+	}
+}
+@media (max-width: 1150px) {
+	.content {
+		display: block;
+		h2 {
+			text-align: center;
+		}
+		aside {
+			min-width: 100%;
+			nav {
+				a {
+					margin: 0 3%;
+				}
+			}
+		}
+		main {
+			.searchContainer {
+				position: sticky;
+				top: 20px;
+				input {
+					width: 90vw;
+				}
+			}
+			.animeList {
+				.animeCard {
+					margin-bottom: 6%;
+				}
+			}
+		}
+	}
+	.popUp {
+		.popUpInner {
+			height: auto;
+		}
+	}
+}
