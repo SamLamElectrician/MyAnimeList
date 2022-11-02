@@ -15,7 +15,7 @@ function App() {
 				<Routes>
 					<Route exact path='/' element={<Login />} />
 					<Route path='/signup' element={<Signup />} />
-
+					{/* protects this about from users who arent logged in */}
 					<Route
 						exact
 						path='/about'
@@ -25,7 +25,7 @@ function App() {
 							</ProtectedRoute>
 						}
 					></Route>
-
+					{/* protects this main from users who arent logged in */}
 					<Route
 						exact
 						path='/home'
@@ -35,6 +35,7 @@ function App() {
 							</ProtectedRoute>
 						}
 					></Route>
+					{/* bypass if you arent logged in */}
 					<Route path='/home2' element={<Main />}></Route>
 					<Route path='/about2' element={<About />}></Route>
 				</Routes>

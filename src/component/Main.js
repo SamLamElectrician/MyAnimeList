@@ -64,6 +64,7 @@ const Main = () => {
 		}
 		setRandom(animeArray);
 	};
+	//calls the effect once for the random anime home page and top animes as they only need to be called once
 	useEffect(() => {
 		SearchRandom();
 		GetTopAnime();

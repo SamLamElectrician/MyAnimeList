@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 import { useUserAuth } from '../context/UserAuthContext';
 
 const Signup = () => {
+	//sets stateful variables
 	const [email, setEmail] = useState('');
 	const [error, setError] = useState('');
 	const [password, setPassword] = useState('');
@@ -15,6 +16,7 @@ const Signup = () => {
 		e.preventDefault();
 		setError('');
 		try {
+			//uses email and password to try to set up login from firebase
 			await signUp(email, password);
 			navigate('/');
 		} catch (err) {
