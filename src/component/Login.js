@@ -6,27 +6,34 @@ import GoogleButton from 'react-google-button';
 import { useUserAuth } from '../context/UserAuthContext';
 
 const Login = () => {
+	//sets states for login
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
 	const { logIn, googleSignIn } = useUserAuth();
 	const navigate = useNavigate();
 
+	//gets data for email and password
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setError('');
 		try {
+			//uses email and pass to try auth
 			await logIn(email, password);
+			//navigate home if works
 			navigate('/home');
 		} catch (err) {
+			//sets an error message
 			setError(err.message);
 		}
 	};
-
+	//google docs for code
 	const handleGoogleSignIn = async (e) => {
 		e.preventDefault();
 		try {
+			//waits for the google window to close
 			await googleSignIn();
+			//navigate home if google log in works
 			navigate('/home');
 		} catch (error) {
 			console.log(error.message);

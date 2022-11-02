@@ -1,6 +1,7 @@
 import React from 'react';
 
 const AnimeCard = ({ anime }) => {
+	//takes data from Main api call to return a card
 	return (
 		<article className='animeCard'>
 			<a href={anime.url} target='_blank' rel='noreferrer'>
@@ -14,7 +15,7 @@ const AnimeCard = ({ anime }) => {
 					<p>{anime.synopsis}</p>
 				</div>
 			</a>
-
+			{/* working on button */}
 			<button buttonKey={anime.mal_id}>
 				{/* <button buttonId={anime.mal_id} onClick={AddToList}> */}
 				Add To List
