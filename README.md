@@ -18,10 +18,10 @@ A recreation of the original my anime list in react where you can login with a g
 - HTML/CSS/SASS
 
 ## Possible improvement(Currently Working on)
--CRUD (Create, Read, Update, Delete) anime entries -->currently working on
--Add a loading state so the page will always display animes
--A popup notification once an anime is added to saved list
--Add to list button changes to remove from list
+- CRUD (Create, Read, Update, Delete) anime entries
+- Add a loading state so the page will always display animes
+- A popup notification once an anime is added to saved list
+- Add to list button changes to remove from list
 
 # Getting Started with Create React App
 
