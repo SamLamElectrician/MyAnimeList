@@ -1,3 +1,8 @@
+# My Anime List Project
+A recreation of the original my anime list in react where you can login with a google account or email address and make a list
+**View live site [here](https://samanimelist.netlify.app/) **
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
