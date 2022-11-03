@@ -22,6 +22,7 @@ A recreation of the original my anime list in react where you can login with a g
 - Add a loading state so the page will always display animes
 - A popup notification once an anime is added to saved list
 - Add to list button changes to remove from list
+- error page or no search result page
 
 # Getting Started with Create React App
 
