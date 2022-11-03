@@ -1,3 +1,28 @@
+# My Anime List Project
+A recreation of the original my anime list in react where you can login with a google account or email address and make a list. 
+**View live site [here](https://samanimelist.netlify.app/) **
+
+
+## Features
+- CRUD (Create, Read, Update, Delete) anime entries -->currently working on
+- Sign up and login pages
+- Anonymous login (demo mode)
+- Error page (for any path without another route)
+- Error handling for fetch calls
+- Clean and minimal UI
+
+## Technologies Used
+- React (Router, useState, useEffect, useContext, props, components, pages)
+- Firebase (User Authentication, Realtime Database)
+- Data drawn from GIKan API
+- HTML/CSS/SASS
+
+## Possible improvement(Currently Working on)
+- CRUD (Create, Read, Update, Delete) anime entries
+- Add a loading state so the page will always display animes
+- A popup notification once an anime is added to saved list
+- Add to list button changes to remove from list
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
