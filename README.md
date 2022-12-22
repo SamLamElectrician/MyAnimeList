@@ -1,5 +1,6 @@
 # My Anime List Project
-A recreation of the original my anime list in react where you can login with a google account or email address and make a list. 
+
+A recreation of the original my anime list in react using the Jikan API where you can login with a google account or email address through firebase authentication and make a list. <br>
 **View live site [here](https://samanimelist.netlify.app/) **
 
 
@@ -22,6 +23,7 @@ A recreation of the original my anime list in react where you can login with a g
 - Add a loading state so the page will always display animes
 - A popup notification once an anime is added to saved list
 - Add to list button changes to remove from list
+- error page or no search result page
 
 # Getting Started with Create React App
 
