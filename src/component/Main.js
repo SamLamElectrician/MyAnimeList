@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import AnimeCard from './AnimeCard';
 import Header from './Header';
+import Homepage from './Homepage';
 
 const Main = () => {
 	// sets anime list
@@ -11,6 +11,8 @@ const Main = () => {
 	const [search, setSearch] = useState('');
 	//sets random animes to display on homepage
 	const [random, setRandom] = useState([]);
+	//sets loading state if data isn't called yet
+	const [loading, setLoading] = useState(true);
 
 	//async/await function to display to top 5 animes by popularity
 	const GetTopAnime = async () => {
@@ -63,6 +65,7 @@ const Main = () => {
 			animeArray.push(animeQuery.data);
 		}
 		setRandom(animeArray);
+		setLoading(false);
 	};
 	//calls the effect once for the random anime home page and top animes as they only need to be called once
 	useEffect(() => {
@@ -89,38 +92,18 @@ const Main = () => {
 						))}
 					</nav>
 				</aside>
-				<main>
-					<div className='searchContainer'>
-						<form onSubmit={HandleSearch} className='searchForm'>
-							<label htmlFor='Search Anime'></label>
-							<input
-								type='search'
-								placeholder='Search Anime and Mangas'
-								value={search}
-								onChange={(e) => setSearch(e.target.value)}
-							/>
-						</form>
-					</div>
-					{search ? (
-						<div className='searchResults'>
-							<h3>Search Results</h3>
-							<div className='animeList'>
-								{animeList.map((anime) => (
-									<AnimeCard anime={anime} key={anime.mal_id} />
-								))}
-							</div>
-						</div>
-					) : (
-						<div className='randomHome'>
-							<h3>Animes You Should Check Out</h3>
-							<div className='animeList'>
-								{random.map((anime) => (
-									<AnimeCard anime={anime} key={anime.mal_id} />
-								))}
-							</div>
-						</div>
-					)}
-				</main>
+				{loading ? (
+					<div class='loading'>loading.. </div>
+				) : (
+					<Homepage
+						HandleSearch={HandleSearch}
+						search={search}
+						setSearch={setSearch}
+						animeList={animeList}
+						random={random}
+						setRandom={setRandom}
+					></Homepage>
+				)}
 			</div>
 		</>
 	);
