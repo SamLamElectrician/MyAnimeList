@@ -16,7 +16,8 @@ const AnimeCard = ({ anime }) => {
 					<p>{anime.synopsis}</p>
 				</div>
 			</a>
-			<Button anime={anime}> Add to List</Button>
+			<button>Add to list</button>
+			{/* <Button anime={anime}> Add to List</Button> */}
 		</article>
 	);
 };
