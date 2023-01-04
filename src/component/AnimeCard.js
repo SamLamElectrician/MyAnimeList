@@ -1,8 +1,11 @@
 import React from 'react';
-import Button from './Button';
+import { useUserAuth } from '../context/UserAuthContext';
 
 const AnimeCard = ({ anime }) => {
+	const { user } = useUserAuth();
+	console.log({ user });
 	//takes data from Main api call to return a card
+
 	return (
 		<article className='animeCard'>
 			<a href={anime.url} target='_blank' rel='noreferrer'>
