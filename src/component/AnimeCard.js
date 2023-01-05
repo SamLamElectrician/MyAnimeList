@@ -1,13 +1,21 @@
 import React from 'react';
 import { useUserAuth } from '../context/UserAuthContext';
-import { getDatabase, push, ref, remove, set } from 'firebase/database';
+import {
+	get,
+	getDatabase,
+	onValue,
+	push,
+	ref,
+	remove,
+	set,
+} from 'firebase/database';
 import firebaseConfig from '../firebase';
 import { useState } from 'react';
 
 const AnimeCard = ({ anime }) => {
 	let { user } = useUserAuth();
-	const [likeStatus, setLikeStatus] = useState(true);
 
+	const [likeStatus, setLikeStatus] = useState(true);
 	//takes data from Main api call to return a card
 	const db = getDatabase(firebaseConfig);
 
@@ -23,13 +31,16 @@ const AnimeCard = ({ anime }) => {
 	};
 
 	const removeFirebase = () => {
-		ref(db, `user/${anime.title}`).remove({
-			link: anime.url,
-			japtitle: anime.title_japanese,
-			engTitle: anime.title,
-			img: anime.images.jpg.large_image_url,
-			plot: anime.synopsis,
-		});
+		// get(ref(db, `${user.uid}`)).then((data) => {
+		// 	remove(db, `${user.id}` + data);
+		// });
+		// ref(db, `user/${user.uid}`).remove({
+		// 	link: anime.url,
+		// 	japtitle: anime.title_japanese,
+		// 	engTitle: anime.title,
+		// 	img: anime.images.jpg.large_image_url,
+		// 	plot: anime.synopsis,
+		// });
 		setLikeStatus(true);
 	};
 
