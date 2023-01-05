@@ -1,11 +1,39 @@
 import React from 'react';
 import { useUserAuth } from '../context/UserAuthContext';
+import { getDatabase, push, ref, remove, set } from 'firebase/database';
+import firebaseConfig from '../firebase';
+import { useState } from 'react';
 
 const AnimeCard = ({ anime }) => {
-	const { user } = useUserAuth();
-	console.log({ user });
-	//takes data from Main api call to return a card
+	let { user } = useUserAuth();
+	const [likeStatus, setLikeStatus] = useState(true);
 
+	//takes data from Main api call to return a card
+	const db = getDatabase(firebaseConfig);
+
+	const pushFirebase = () => {
+		push(ref(db, `user/${user.uid}`), {
+			link: anime.url,
+			japtitle: anime.title_japanese,
+			engTitle: anime.title,
+			img: anime.images.jpg.large_image_url,
+			plot: anime.synopsis,
+		});
+		setLikeStatus(false);
+	};
+
+	const removeFirebase = () => {
+		ref(db, `user/${anime.title}`).remove({
+			link: anime.url,
+			japtitle: anime.title_japanese,
+			engTitle: anime.title,
+			img: anime.images.jpg.large_image_url,
+			plot: anime.synopsis,
+		});
+		setLikeStatus(true);
+	};
+
+	//takes data from Main api call to return a card
 	return (
 		<article className='animeCard'>
 			<a href={anime.url} target='_blank' rel='noreferrer'>
@@ -19,8 +47,13 @@ const AnimeCard = ({ anime }) => {
 					<p>{anime.synopsis}</p>
 				</div>
 			</a>
-			<button>Add to list</button>
+			{likeStatus ? (
+				<button onClick={() => pushFirebase()}>Add to list</button>
+			) : (
+				<button onClick={() => removeFirebase()}>Remove from List</button>
+			)}
 			{/* <Button anime={anime}> Add to List</Button> */}
+			{user ? user.email : 'user it not here'}
 		</article>
 	);
 };

@@ -20,11 +20,12 @@ const Login = () => {
 		try {
 			//uses email and pass to try auth
 			await logIn(email, password);
-			//navigate home if works
-			navigate('/home');
 		} catch (err) {
 			//sets an error message
 			setError(err.message);
+		} finally {
+			//navigate home if works
+			navigate('/home');
 		}
 	};
 	//google docs for code

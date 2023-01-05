@@ -9,7 +9,7 @@ const Signup = () => {
 	const [email, setEmail] = useState('');
 	const [error, setError] = useState('');
 	const [password, setPassword] = useState('');
-	const { signUp } = useUserAuth();
+	const { signUp, logIn } = useUserAuth();
 	let navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
@@ -18,9 +18,12 @@ const Signup = () => {
 		try {
 			//uses email and password to try to set up login from firebase
 			await signUp(email, password);
-			navigate('/');
+			navigate('/home');
 		} catch (err) {
 			setError(err.message);
+		} finally {
+			await logIn(email, password);
+			navigate('/home');
 		}
 	};
 
