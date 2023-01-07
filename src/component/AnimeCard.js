@@ -1,14 +1,6 @@
 import React from 'react';
 import { useUserAuth } from '../context/UserAuthContext';
-import {
-	get,
-	getDatabase,
-	onValue,
-	push,
-	ref,
-	remove,
-	set,
-} from 'firebase/database';
+import { getDatabase, push, ref, set } from 'firebase/database';
 import firebaseConfig from '../firebase';
 import { useState } from 'react';
 
@@ -17,16 +9,29 @@ const AnimeCard = ({ anime }) => {
 
 	const [likeStatus, setLikeStatus] = useState(true);
 	//takes data from Main api call to return a card
-	const db = getDatabase(firebaseConfig);
+
+	const handleClick = () => {
+		const db = getDatabase(firebaseConfig);
+		const dbRef = ref(db, `user/${user.uid}`);
+		const newPost = push(dbRef);
+		const keyArray = [];
+		const key = newPost.key;
+		keyArray.push(key);
+		console.log(keyArray);
+		if (likeStatus) {
+			set(newPost, {
+				link: anime.url,
+				japtitle: anime.title_japanese,
+				engTitle: anime.title,
+				img: anime.images.jpg.large_image_url,
+				plot: anime.synopsis,
+			});
+			setLikeStatus(false);
+		} else {
+		}
+	};
 
 	const pushFirebase = () => {
-		push(ref(db, `user/${user.uid}`), {
-			link: anime.url,
-			japtitle: anime.title_japanese,
-			engTitle: anime.title,
-			img: anime.images.jpg.large_image_url,
-			plot: anime.synopsis,
-		});
 		setLikeStatus(false);
 	};
 
@@ -42,6 +47,17 @@ const AnimeCard = ({ anime }) => {
 		// 	plot: anime.synopsis,
 		// });
 		setLikeStatus(true);
+		var nodeRef = database.ref('items').child(pushId);
+
+		// Remove the node
+		nodeRef
+			.remove()
+			.then(function () {
+				console.log('Remove succeeded.');
+			})
+			.catch(function (error) {
+				console.log('Remove failed: ' + error.message);
+			});
 	};
 
 	//takes data from Main api call to return a card
@@ -59,9 +75,9 @@ const AnimeCard = ({ anime }) => {
 				</div>
 			</a>
 			{likeStatus ? (
-				<button onClick={() => pushFirebase()}>Add to list</button>
+				<button onClick={() => handleClick()}>Add to list</button>
 			) : (
-				<button onClick={() => removeFirebase()}>Remove from List</button>
+				<button onClick={() => handleClick()}>Remove from List</button>
 			)}
 			{/* <Button anime={anime}> Add to List</Button> */}
 			{user ? user.email : 'user it not here'}
